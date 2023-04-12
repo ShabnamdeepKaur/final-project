@@ -1,0 +1,31 @@
+header>div{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,7);
+}
+header>div>h1{
+    font-size: 3.5em;
+    color: #f4f4f4;
+}
+/* background image */
+main>div{
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    background-image: url(../images/bg-pic.webp);
+    backdrop-filter: blur(10px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main>div>p{
+    font-weight: bolder;
+    font-size: x-large;
+    font-family: "Bodoni MT";
+}

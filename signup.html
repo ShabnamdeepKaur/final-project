@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <meta name="description" content="This week we will be creating our layout using CSS Flexbox">
+    <meta name="robots" content="noindex, nofollow">
+    <!--   fonts   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <!--   CSS   -->
+    <link rel="stylesheet" href="./css/signup.css">
+    <script src="js/jquery-1.8.2.min.js"></script>
+<!-- jquery   -->
+    <script>
+
+        $(document).ready(function(){
+alert();
+            $("#cross").click(function(){
+                //$(".box").hide();
+                // $(".box").slideUp(1000);
+                $(".box").fadeOut();
+            });
+
+            $("#txtUid").blur(function()
+            {
+                var r=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+                if($("#txtUid").val()=="")
+                {
+                    alert("Please fill in your email address.");
+                }
+                else
+                if(r.test($("#txtUid").val())==false)
+                {
+                    alert("Please fill in your valid email address.")
+                }
+
+
+
+            });
+
+            //    Regular Expressions
+            $("#txtMob").blur(function(){
+
+                var r=/^[6-9]{1}[0-9]{9}$/; //reg exp
+
+                var mob=$("#txtMob").val();
+
+                if($("#txtMob").val()=="")
+                {
+                    alert("Please fill in your mobile number.");
+                }
+                else
+                if(r.test(mob)==false)
+                {
+                    alert("Please fill in your valid mobile number.");
+                }
+
+
+            });
+
+            $("#txtPwd").blur(function(){
+
+                var r=/(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+                var pwd=$("#txtPwd").val();
+
+                if($("#txtPwd").val()=="")
+                {
+                    alert("Please fill in your password.");
+                }
+                else
+                if(r.test(pwd)==false)
+                {
+                    alert("Your password must have dig,spl symbol and alphas.");
+                }
+
+
+            });
+
+            $(#btn).click(function () {
+                alert("Signup Successful.");
+            });
+
+        });
+    </script>
+</head>
+<body class="page2">
+    <main>
+        <div class="box">
+            <!--  cross button      -->
+            <div id="cross"></div>
+            <!--  image      -->
+            <div id="img"></div>
+            <form action="">
+                <table>
+                    <tr>
+                        <td>
+                            <label> User Id </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="uid-kuch" type="text" id="txtUid">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label> Password </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password" id="txtPwd" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label> Mobile </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="txtMob"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div id="btn">Save</div>
+                        </th>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
